@@ -39,6 +39,7 @@ export const PrototypeCard = () => {
       referralEarningsPercent,
     } = inputs;
 
+    // Validation check: Check if any input value is less than 0
     if (
       grossEarnings < 0 ||
       dalalEarningsPercent < 0 ||
@@ -72,6 +73,14 @@ export const PrototypeCard = () => {
       );
       setShowOutput(false);
     }
+
+    setInputs({
+      grossEarnings: "",
+      dalalEarningsPercent: "",
+      traderEarningsPercent: "",
+      miscFeesPercent: "",
+      referralEarningsPercent: "",
+    });
   };
   return (
     <div className="prototype-card">

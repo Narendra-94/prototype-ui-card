@@ -27208,6 +27208,7 @@ const PrototypeCard = ()=>{
     };
     const handleCalculate = ()=>{
         const { grossEarnings, dalalEarningsPercent, traderEarningsPercent, miscFeesPercent, referralEarningsPercent } = inputs;
+        // Validation check: Check if any input value is less than 0
         if (grossEarnings < 0 || dalalEarningsPercent < 0 || traderEarningsPercent < 0 || miscFeesPercent < 0 || referralEarningsPercent < 0) {
             setErrorMessage("Please enter positive values for all input fields.");
             setShowOutput(false);
@@ -27230,6 +27231,13 @@ const PrototypeCard = ()=>{
             setErrorMessage("Please enter values for Dalal Earnings % and Trader Earnings %.");
             setShowOutput(false);
         }
+        setInputs({
+            grossEarnings: "",
+            dalalEarningsPercent: "",
+            traderEarningsPercent: "",
+            miscFeesPercent: "",
+            referralEarningsPercent: ""
+        });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "prototype-card",
@@ -27241,7 +27249,7 @@ const PrototypeCard = ()=>{
                         children: "Calculate Earnings"
                     }, void 0, false, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 79,
+                        lineNumber: 88,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27251,7 +27259,7 @@ const PrototypeCard = ()=>{
                                 children: "Gross Earnings (Rs)"
                             }, void 0, false, {
                                 fileName: "src/components/PrototypeCard.js",
-                                lineNumber: 81,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27262,13 +27270,13 @@ const PrototypeCard = ()=>{
                                 placeholder: "Gross Earnings"
                             }, void 0, false, {
                                 fileName: "src/components/PrototypeCard.js",
-                                lineNumber: 82,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 80,
+                        lineNumber: 89,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27281,7 +27289,7 @@ const PrototypeCard = ()=>{
                                         children: "Dalal Earnings (%)"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 92,
+                                        lineNumber: 101,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27292,13 +27300,13 @@ const PrototypeCard = ()=>{
                                         placeholder: "Dalal Earnings"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 93,
+                                        lineNumber: 102,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/PrototypeCard.js",
-                                lineNumber: 91,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27308,7 +27316,7 @@ const PrototypeCard = ()=>{
                                         children: "Trader Earnings (%)"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 102,
+                                        lineNumber: 111,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27319,19 +27327,19 @@ const PrototypeCard = ()=>{
                                         placeholder: "Trader Earnings"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 103,
+                                        lineNumber: 112,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/PrototypeCard.js",
-                                lineNumber: 101,
+                                lineNumber: 110,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 90,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27344,7 +27352,7 @@ const PrototypeCard = ()=>{
                                         children: "Misc. Fees (%)"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 114,
+                                        lineNumber: 123,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27355,13 +27363,13 @@ const PrototypeCard = ()=>{
                                         placeholder: "Misc Fees"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 115,
+                                        lineNumber: 124,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/PrototypeCard.js",
-                                lineNumber: 113,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27371,7 +27379,7 @@ const PrototypeCard = ()=>{
                                         children: "Referral Earnings (%)"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 124,
+                                        lineNumber: 133,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -27382,19 +27390,19 @@ const PrototypeCard = ()=>{
                                         placeholder: "Referral Earnings"
                                     }, void 0, false, {
                                         fileName: "src/components/PrototypeCard.js",
-                                        lineNumber: 125,
+                                        lineNumber: 134,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/PrototypeCard.js",
-                                lineNumber: 123,
+                                lineNumber: 132,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 112,
+                        lineNumber: 121,
                         columnNumber: 9
                     }, undefined),
                     errorMessage && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27402,7 +27410,7 @@ const PrototypeCard = ()=>{
                         children: errorMessage
                     }, void 0, false, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 135,
+                        lineNumber: 144,
                         columnNumber: 26
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27410,13 +27418,13 @@ const PrototypeCard = ()=>{
                         children: "Calculate"
                     }, void 0, false, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 136,
+                        lineNumber: 145,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/PrototypeCard.js",
-                lineNumber: 78,
+                lineNumber: 87,
                 columnNumber: 7
             }, undefined),
             showOutput && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27426,7 +27434,7 @@ const PrototypeCard = ()=>{
                         children: "Output"
                     }, void 0, false, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 140,
+                        lineNumber: 149,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("table", {
@@ -27438,20 +27446,20 @@ const PrototypeCard = ()=>{
                                             children: "Dalal Earnings"
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 144,
+                                            lineNumber: 153,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
                                             children: output.dalalEarnings
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 145,
+                                            lineNumber: 154,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/PrototypeCard.js",
-                                    lineNumber: 143,
+                                    lineNumber: 152,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
@@ -27460,20 +27468,20 @@ const PrototypeCard = ()=>{
                                             children: "Trader Earnings"
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 148,
+                                            lineNumber: 157,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
                                             children: output.traderEarnings
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 149,
+                                            lineNumber: 158,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/PrototypeCard.js",
-                                    lineNumber: 147,
+                                    lineNumber: 156,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
@@ -27482,20 +27490,20 @@ const PrototypeCard = ()=>{
                                             children: "Misc. Fees"
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 152,
+                                            lineNumber: 161,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
                                             children: output.miscFees
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 153,
+                                            lineNumber: 162,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/PrototypeCard.js",
-                                    lineNumber: 151,
+                                    lineNumber: 160,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
@@ -27504,43 +27512,43 @@ const PrototypeCard = ()=>{
                                             children: "Referral Earnings"
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 156,
+                                            lineNumber: 165,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
                                             children: output.referralEarnings
                                         }, void 0, false, {
                                             fileName: "src/components/PrototypeCard.js",
-                                            lineNumber: 157,
+                                            lineNumber: 166,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/PrototypeCard.js",
-                                    lineNumber: 155,
+                                    lineNumber: 164,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/PrototypeCard.js",
-                            lineNumber: 142,
+                            lineNumber: 151,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/PrototypeCard.js",
-                        lineNumber: 141,
+                        lineNumber: 150,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/PrototypeCard.js",
-                lineNumber: 139,
+                lineNumber: 148,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/PrototypeCard.js",
-        lineNumber: 77,
+        lineNumber: 86,
         columnNumber: 5
     }, undefined);
 };
