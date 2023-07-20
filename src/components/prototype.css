@@ -59,17 +59,11 @@
   font-weight: 300;
 }
 
-.calculation-card input::-webkit-outer-spin-button,
-.calculation-card input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .calculation-card .error-message {
   color: #ff0000;
   font-size: 14px;
   margin-top: 10px;
-  margin-bottom: -20px;
+  margin-bottom: -35px;
 }
 
 .calculation-card button {
@@ -126,4 +120,13 @@
 textarea:focus,
 input:focus {
   outline: none;
+}
+
+.calculation-card input[type="number"]::-webkit-outer-spin-button,
+.calculation-card input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.calculation-card input[type="number"] {
+  -moz-appearance: textfield;
 }

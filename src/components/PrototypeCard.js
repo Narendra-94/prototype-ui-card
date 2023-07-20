@@ -39,6 +39,18 @@ export const PrototypeCard = () => {
       referralEarningsPercent,
     } = inputs;
 
+    if (
+      grossEarnings < 0 ||
+      dalalEarningsPercent < 0 ||
+      traderEarningsPercent < 0 ||
+      miscFeesPercent < 0 ||
+      referralEarningsPercent < 0
+    ) {
+      setErrorMessage("Please enter positive values for all input fields.");
+      setShowOutput(false);
+      return;
+    }
+
     if (dalalEarningsPercent !== "" && traderEarningsPercent !== "") {
       const dalalEarnings = grossEarnings * (dalalEarningsPercent / 100);
       const traderEarnings = grossEarnings * (traderEarningsPercent / 100);
@@ -61,7 +73,6 @@ export const PrototypeCard = () => {
       setShowOutput(false);
     }
   };
-
   return (
     <div className="prototype-card">
       <div className="calculation-card">

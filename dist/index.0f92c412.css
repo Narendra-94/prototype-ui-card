@@ -59,15 +59,10 @@
   font-weight: 300;
 }
 
-:is(.calculation-card input::-webkit-outer-spin-button, .calculation-card input::-webkit-inner-spin-button) {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .calculation-card .error-message {
   color: red;
   margin-top: 10px;
-  margin-bottom: -20px;
+  margin-bottom: -35px;
   font-size: 14px;
 }
 
@@ -124,6 +119,14 @@
 
 textarea:focus, input:focus {
   outline: none;
+}
+
+:is(.calculation-card input[type="number"]::-webkit-outer-spin-button, .calculation-card input[type="number"]::-webkit-inner-spin-button) {
+  display: none;
+}
+
+.calculation-card input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 *, :before, :after {
