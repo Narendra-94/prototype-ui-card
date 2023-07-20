@@ -39,39 +39,43 @@ export const PrototypeCard = () => {
       referralEarningsPercent,
     } = inputs;
 
-    // Validation check: Check if any input value is less than 0
+    // Validation check: Check if any input value is less than or equal to 0
     if (
-      grossEarnings < 0 ||
-      dalalEarningsPercent < 0 ||
-      traderEarningsPercent < 0 ||
-      miscFeesPercent < 0 ||
-      referralEarningsPercent < 0
+      grossEarnings <= 0 ||
+      dalalEarningsPercent <= 0 ||
+      traderEarningsPercent <= 0 ||
+      miscFeesPercent <= 0 ||
+      referralEarningsPercent <= 0
     ) {
       setErrorMessage("Please enter positive values for all input fields.");
       setShowOutput(false);
       return;
     }
 
-    if (dalalEarningsPercent !== "" && traderEarningsPercent !== "") {
-      const dalalEarnings = grossEarnings * (dalalEarningsPercent / 100);
-      const traderEarnings = grossEarnings * (traderEarningsPercent / 100);
-      const miscFees = grossEarnings * (miscFeesPercent / 100);
-      const referralEarnings = grossEarnings * (referralEarningsPercent / 100);
+    // Validation check: Check if any input field is empty
+    if (
+      grossEarnings === "" ||
+      dalalEarningsPercent === "" ||
+      traderEarningsPercent === "" ||
+      miscFeesPercent === "" ||
+      referralEarningsPercent === ""
+    ) {
+      setErrorMessage("Please fill in all input fields.");
+      setShowOutput(false);
+      return;
+    }
 
-      setOutput({
-        dalalEarnings,
-        traderEarnings,
-        miscFees,
-        referralEarnings,
-      });
-
-      setErrorMessage("");
-      setShowOutput(true);
-    } else {
+    // Validation check: Ensure Dalal Earnings% + Trader Earnings% = 100%
+    if (
+      dalalEarningsPercent !== "" &&
+      traderEarningsPercent !== "" &&
+      Number(dalalEarningsPercent) + Number(traderEarningsPercent) !== 100
+    ) {
       setErrorMessage(
-        "Please enter values for Dalal Earnings % and Trader Earnings %."
+        "The sum of Dalal Earnings% and Trader Earnings% must be 100%."
       );
       setShowOutput(false);
+      return;
     }
 
     setInputs({
