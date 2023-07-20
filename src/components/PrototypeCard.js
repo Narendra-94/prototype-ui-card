@@ -12,6 +12,7 @@ export const PrototypeCard = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showOutput, setShowOutput] = useState(false);
   const [output, setOutput] = useState({
+    dalalEarnings: 0,
     traderEarnings: 0,
     miscFees: 0,
     referralEarnings: 0,
@@ -39,7 +40,6 @@ export const PrototypeCard = () => {
       referralEarningsPercent,
     } = inputs;
 
-    // Validation check: Check if any input value is less than or equal to 0
     if (
       grossEarnings <= 0 ||
       dalalEarningsPercent <= 0 ||
@@ -52,7 +52,6 @@ export const PrototypeCard = () => {
       return;
     }
 
-    // Validation check: Check if any input field is empty
     if (
       grossEarnings === "" ||
       dalalEarningsPercent === "" ||
@@ -65,18 +64,29 @@ export const PrototypeCard = () => {
       return;
     }
 
-    // Validation check: Ensure Dalal Earnings% + Trader Earnings% = 100%
     if (
       dalalEarningsPercent !== "" &&
       traderEarningsPercent !== "" &&
       Number(dalalEarningsPercent) + Number(traderEarningsPercent) !== 100
     ) {
       setErrorMessage(
-        "The sum of Dalal Earnings% and Trader Earnings% must be 100%."
+        "The sum of Dalal Earnings % and Trader Earnings % must be 100."
       );
       setShowOutput(false);
       return;
     }
+
+    const dalalEarnings = grossEarnings * (dalalEarningsPercent / 100);
+    const traderEarnings = grossEarnings * (traderEarningsPercent / 100);
+    const miscFees = grossEarnings * (miscFeesPercent / 100);
+    const referralEarnings = grossEarnings * (referralEarningsPercent / 100);
+
+    setOutput({
+      dalalEarnings,
+      traderEarnings,
+      miscFees,
+      referralEarnings,
+    });
 
     setInputs({
       grossEarnings: "",
@@ -85,7 +95,10 @@ export const PrototypeCard = () => {
       miscFeesPercent: "",
       referralEarningsPercent: "",
     });
+
+    setShowOutput(true);
   };
+
   return (
     <div className="prototype-card">
       <div className="calculation-card">
