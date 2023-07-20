@@ -59,9 +59,15 @@
   font-weight: 300;
 }
 
+:is(.calculation-card input::-webkit-outer-spin-button, .calculation-card input::-webkit-inner-spin-button) {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .calculation-card .error-message {
   color: red;
   margin-top: 10px;
+  margin-bottom: -20px;
   font-size: 14px;
 }
 
@@ -69,12 +75,20 @@
   color: #080710;
   cursor: pointer;
   background-color: #fff;
+  border: .25px solid #fff;
   border-radius: 5px;
   width: 100%;
   margin-top: 50px;
   padding: 10px 0;
   font-size: 18px;
   font-weight: 600;
+  transition: all .4s;
+}
+
+.calculation-card button:hover {
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
 }
 
 .output-card {
@@ -83,8 +97,8 @@
   border: 2px solid #ffffff1a;
   border-radius: 10px;
   width: 500px;
+  margin-top: 550px;
   padding: 20px;
-  position: absolute;
   bottom: 10%;
   box-shadow: 0 0 40px #08071099;
 }

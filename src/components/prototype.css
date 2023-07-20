@@ -10,6 +10,7 @@
   align-items: center;
   gap: 2rem;
 }
+
 .calculation-card {
   height: 470px;
   width: 430px;
@@ -58,31 +59,44 @@
   font-weight: 300;
 }
 
+.calculation-card input::-webkit-outer-spin-button,
+.calculation-card input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .calculation-card .error-message {
   color: #ff0000;
   font-size: 14px;
   margin-top: 10px;
+  margin-bottom: -20px;
 }
 
 .calculation-card button {
   margin-top: 50px;
   width: 100%;
   background-color: #ffffff;
+  border: 0.25px solid white;
   color: #080710;
   padding: 10px 0;
   font-size: 18px;
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.4s;
+}
+
+.calculation-card button:hover {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
 }
 
 .output-card {
   width: 500px;
   padding: 20px;
-
-  position: absolute;
+  margin-top: 550px;
   bottom: 10%;
-
   border-radius: 10px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
