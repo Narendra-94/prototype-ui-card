@@ -31,7 +31,8 @@ export const PrototypeCard = () => {
     }
   };
 
-  const handleCalculate = () => {
+  const handleCalculate = (e) => {
+    console.log(e.target.name);
     const {
       grossEarnings,
       dalalEarningsPercent,
@@ -41,11 +42,11 @@ export const PrototypeCard = () => {
     } = inputs;
 
     if (
-      grossEarnings <= 0 ||
-      dalalEarningsPercent <= 0 ||
-      traderEarningsPercent <= 0 ||
-      miscFeesPercent <= 0 ||
-      referralEarningsPercent <= 0
+      grossEarnings < 0 ||
+      dalalEarningsPercent < 0 ||
+      traderEarningsPercent < 0 ||
+      miscFeesPercent < 0 ||
+      referralEarningsPercent < 0
     ) {
       setErrorMessage("Please enter positive values for all input fields.");
       setShowOutput(false);
